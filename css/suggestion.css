@@ -1,0 +1,66 @@
+.datasik_suggestion {
+    position: relative;
+}
+
+.datasik_suggestion_list {
+    position: absolute;
+    right: 28px;
+    z-index: 100;
+    width: 200px;
+    max-height: 150px;
+    overflow: scroll;
+    background-color: #fff;
+    -webkit-box-shadow: 0 2px 5px rgb(0, 0, 0, 0.2);
+    box-shadow: 0 2px 5px rgb(0, 0, 0, 0.2);
+    padding: 0 0 0 10px;
+}
+
+.datasik_suggestion_list li {
+    padding: 10px 0;
+    margin: 5px 0;
+    border-bottom: 1px solid #ece8e8;
+    list-style-type: none;
+    cursor: pointer;
+}
+
+.datasik_suggestion_list li span {
+    padding: 0 5px;
+}
+
+.datasik_suggestion_list li {
+    font-size: 14px;
+}
+
+
+.sign-right,
+.sign-left {
+    position: absolute;
+    top: 50%;
+    right: 3px;
+    font-size: 15px;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    color: green;
+    background: #fff;
+}
+
+.old_street_address,
+.new_street_address {
+    padding-right: 30px;
+}
+
+@media screen and (max-width: 768px) {
+
+    .datasik_suggestion_list {
+        position: absolute;
+        left: 83px;
+        z-index: 100;
+        width: 180px;
+        max-height: 150px;
+        overflow: scroll;
+        background-color: #fff;
+        -webkit-box-shadow: 0 2px 5px rgb(0, 0, 0, 0.2);
+        box-shadow: 0 2px 5px rgb(0, 0, 0, 0.2);
+    }
+}

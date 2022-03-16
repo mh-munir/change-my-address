@@ -1,0 +1,1046 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change_My_Address</title>
+
+
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet">
+    <!-- Css Link -->
+    <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="css/flatpickr.min.css">
+    <link rel="stylesheet" href="css/suggestion.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- popup-permanent -->
+    <div id="popup-permanent" class="popup_permanent d-none">
+        <div class="guide">
+            <div class="guide_btn">
+                <button type="button" class="btn p_guide_btn" data-dismiss="popup-permanent">&times;</button>
+            </div>
+            <div class="user_guide_heading">
+                <h5>Select Permanent if:</h5>
+            </div>
+            <p class="guide_text">
+                You have no plans to move back to your old address. (Most moves are permanent)
+            </p>
+        </div>
+    </div>
+    <!-- popup-permanent End -->
+
+    <!-- popup-temporary -->
+    <div id="popup-temporary" class="popup_temporary d-none">
+        <div class="guide">
+            <div class="guide_btn">
+                <button type="button" class="btn t_guide_btn" data-dismiss="popup-permanent">&times;</button>
+            </div>
+            <div class="user_guide_heading">
+                <h5>Choose temporary if you plan to move back to your old address in less than six months.</h5>
+            </div>
+            <p class="guide_text my-3">
+                You can request forwarding your mail to your temporary address for a minimum of two weeks and a maximum
+                of six months. You can extend your temporary forwarding as long as the total forwarding time is less
+                than 12 months.
+            </p>
+            <p class="guide_text_02">
+                You can request forwarding your mail to your temporary address for a minimum of two weeks and a maximum
+                of six months. You can extend your temporary forwarding as long as the total forwarding time is less
+                than 12 months.
+            </p>
+        </div>
+    </div>
+    <!-- popup-temporary End -->
+
+    <!-- Personal Info -->
+    <div id="popup-personal" class="popup_personal d-none">
+        <div class="guide">
+            <div class="guide_btn">
+                <button type="button" class="btn psnl_guide_btn" data-dismiss="popup-personal">&times;</button>
+            </div>
+            <div class="user_guide_heading">
+                <h5>First Name (or Initial)</h5>
+            </div>
+            <p class="guide_text mt-3">
+                -If you selected INDIVIDUAL, enter your FIRST NAME or initial.
+
+            </p>
+            <p class="guide_text_02 mt-2">
+                - If you selected ENTIRE FAMILY, enter the first name or initial of the head of the household.
+            </p>
+            <div class="user_guide_heading mt-3">
+                <h5>Middle Name (or Initial)</h5>
+            </div>
+            <p class="guide_text mt-3">
+                - Fill in your MIDDLE NAME or INITIAL..
+
+            </p>
+            <p class="guide_text_02 mt-2">
+                - If you selected ENTIRE FAMILY, enter the middle name or initials of the head of the household.
+            </p>
+            <div class="user_guide_heading mt-3">
+                <h5>Last Name</h5>
+            </div>
+            <p class="guide_text mt-3">
+                - Fill in only one LAST NAME.
+
+            </p>
+            <p class="guide_text_02 mt-2">
+                - If anyone with the same last name is moving to a different address, use a separate form for each
+                person.
+            </p>
+            <p class="guide_text_02 mt-3">
+                Note: If you receive mail by more than one name (maiden name, married name, or nickname) please fill out
+                a separate form for each name and check the INDIVIDUAL box
+            </p>
+        </div>
+    </div>
+    <!-- Personal Info End -->
+
+
+    <!-- popup-individual -->
+    <div id="popup-individual" class="popup_individual d-none">
+        <div class="guide">
+            <div class="guide_btn">
+                <button type="button" class="btn ind_guide_btn" data-dismiss="popup-permanent">&times;</button>
+            </div>
+            <div class="user_guide_heading">
+                <h5>Individual:</h5>
+            </div>
+            <p class="guide_text mt-3">
+                Select this option if only one person is moving or if the individuals moving have different last names
+                (which will require separate Change of Address requests).
+            </p>
+            <p class="guide_text mt-2">
+                If you receive mail by more than one name (maiden name, married name or nickname), select "individual"
+                and fill out a separate form for each name.
+            </p>
+        </div>
+    </div>
+    <!-- popup-individual End -->
+
+    <!-- popup-family -->
+    <div id="popup-family" class="popup_family d-none">
+        <div class="guide">
+            <div class="guide_btn">
+                <button type="button" class="btn fml_guide_btn" data-dismiss="popup-permanent">&times;</button>
+            </div>
+            <div class="user_guide_heading">
+                <h5>Family:</h5>
+            </div>
+            <p class="guide_text mt-3">
+                Select this option if your entire family has the same last name and is moving to the same address
+            </p>
+            <p class="guide_text mt-2">
+                If anyone with the same last name is staying at the old address, select the "individual" option. In all
+                cases, family members with different last names or those family members moving to different addresses
+                must prepare separate forms.
+            </p>
+        </div>
+    </div>
+    <!-- popup-family End -->
+
+    <!-- popup-business -->
+    <div id="popup-business" class="popup_business d-none">
+        <div class="guide">
+            <div class="guide_btn">
+                <button type="button" class="btn bus_guide_btn" data-dismiss="popup-permanent">&times;</button>
+            </div>
+            <div class="user_guide_heading">
+                <h5>Business:</h5>
+            </div>
+            <p class="guide_text mt-3">
+                Select this option if a business is moving. An individual change of address from a business address is
+                not acceptable.
+            </p>
+            <p class="guide_text mt-2">
+                The company remaining at the address is responsible for forwarding any mail that belongs to you and not
+                the company.
+            </p>
+        </div>
+    </div>
+    <!-- popup-business End -->
+
+
+
+    <div class="container">
+        <div class="main_header py-4 px-4">
+            <div class="row justify-content-around">
+                <div class="col-lg-6">
+                    <div class="logo_img">
+                        <img src="img/icnbHAd.png" alt="Logo" class="img-fluid">
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="contact_number">
+                        <h6> <a href="">Questions? Call: 1-888-481-9592</a></h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="form_body mt-3">
+            <div class="row">
+                <div class="col-12">
+                    <div class="form_body_header py-2 mt-5">
+                        <div class="row px-4">
+                            <div class="col-8">
+                                <div class="form_body_header_text">
+                                    <h4>Secure USPS Change Of Address</h4>
+                                </div>
+                            </div>
+                            <div class="col-4 text-right">
+                                <div class="lock_img">
+                                    <img src="img/lock.png" alt="Lock" class="img-fluid">
+                                </div>
+                                <div class="lock_text">
+                                    <h6>SECURE FORM</h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <form action="">
+                <div class="row mt-3 px-3">
+
+                    <!-- Left Form -->
+                    <div class="col-lg-4 mb-3">
+                        <div class="form_1 top_border_none">
+                            <div class="form_step_heading text-center py-1">
+                                <h4>Step 1 - Select Move Type</h4>
+                            </div>
+
+                            <!-- Permanent -->
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="move_type px-2 py-2 mt-3">
+                                        <div class="row">
+                                            <div class="col-8">
+                                                <input class="permanent_type" type="radio" id="permanent-rediobtn"
+                                                    name="move-type" value="Permanent" checked="">
+                                                <label for="permanent-rediobtn">
+                                                    Permanent
+                                                </label>
+                                            </div>
+                                            <div class="col-4 text-right">
+                                                <div class="help_text help_p">
+                                                    <h6>Help <span>?</span></h6>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-12">
+                                    <div class="move_type_text my-2 px-2">
+                                        <p>Select Permanent if you have no plans to move back to your old address. (Most
+                                            moves are permanent.)</p>
+                                    </div>
+                                </div>
+                                <!-- Permanent End -->
+                            </div>
+
+                            <!-- Temporary -->
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="move_type px-2 py-2">
+                                        <div class="row">
+                                            <div class="col-8">
+                                                <input class="temporary_type" type="radio" id="temporary-radiobtn"
+                                                    name="move-type" value="Temporary">
+                                                <label for="temporary-radiobtn">
+                                                    <span class="iconRadio"></span> Temporary
+                                                </label>
+                                            </div>
+                                            <div class="col-4 text-right">
+                                                <div class="help_text help_t">
+                                                    <h6>Help <span>?</span></h6>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="move_type_text my-2 px-2">
+                                        <p>Select Temporary if you plan to move back to your old address within 6
+                                            months. (See 'Help' for more details.)</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Temporary End-->
+
+                            <!-- Start forwarding -->
+                            <div class="row">
+                                <div class="col-12 px-4">
+                                    <div class="start_forwarding_date mt-3 my_label">
+                                        <label>Start forwarding
+                                            on:</label>
+                                        <input class="form-control start_forwarding_date" id="start-forwarding-date"
+                                            name="start_forward" value="04-29-2020" placeholder="Select Date">
+                                        <img alt="Calender" class="calender" src="img/calendar.gif" class="img-fluid">
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Start forwarding End-->
+
+                            <!-- Stop forwarding -->
+                            <div class="row">
+                                <div class="col-12 px-4">
+                                    <div class="stop_forwarding_date mt-4  my_label d-none">
+                                        <label>Stop forwarding
+                                            on:</label>
+                                        <input class="form-control start_forwarding_date" id="stop-forwarding-date"
+                                            name="start_forward" placeholder="Select Date">
+                                        <img alt="Calender" class="calender" src="img/calendar.gif" class="img-fluid">
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Stop forwarding End -->
+
+                            <!-- Personal Info -->
+                            <div class="row mt-5">
+                                <div class="col-12">
+                                    <div class="all_step_heading p-2">
+                                        <div class="row">
+                                            <div class="col-8">
+                                                <h5>Personal Info</h5>
+                                            </div>
+                                            <div class="col-4 text-right">
+                                                <div class="help_text help_psn">
+                                                    <h6>Help <span>?</span></h6>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row px-2 mt-3">
+                                <div class="col-12">
+                                    <div class="title my_label select_group title">
+                                        <label>Title:</label>
+                                        <select class="form-control">
+                                            <option value="Mr." selected>Mr.</option>
+                                            <option value="Mr.">Dr.</option>
+                                            <option value="Mr.">Hon.</option>
+                                            <option value="Mr.">Ms.</option>
+                                            <option value="Mr.">Mrs.</option>
+                                            <option value="Mr.">Prof.</option>
+                                            <option value="Mr.">Rev.</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-12 mt-2">
+                                    <div class="first_name my_label input_group">
+                                        <label>First Name:</label>
+                                        <input type="text" class="form-control" required autocomplete="nope">
+                                    </div>
+                                </div>
+                                <div class="col-12 mt-2">
+                                    <div class="last_name my_label input_group">
+                                        <label>Last Name:</label>
+                                        <input type="text" class="form-control" required autocomplete="nope">
+                                    </div>
+                                </div>
+                                <div class="col-12 mt-2">
+                                    <div class="email my_label input_group">
+                                        <label>Email:</label>
+                                        <input type="email" class="form-control" required autocomplete="nope">
+                                    </div>
+                                </div>
+                                <div class="col-12 my-3">
+                                    <div class="step_01_last_text">
+                                        <p>
+                                            Your Change of Address Confirmation will be e-mailed to the above email
+                                            address.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Personal Info End -->
+                        </div>
+                    </div>
+                    <!-- Left Form End -->
+
+                    <!-- middle Form -->
+                    <div class="col-lg-4">
+                        <div class="form_2 top_border_none mb-3">
+                            <div class="form_step_heading text-center py-1">
+                                <h4>Step 2 - Select Move Type</h4>
+                            </div>
+                            <div class="all_step_heading p-2 mt-3">
+                                <div class="row">
+                                    <div class="col-8">
+                                        <h5>Old Address</h5>
+                                    </div>
+                                    <div class="col-4 text-right">
+                                        <div class="help_text">
+                                            <h6>Help <span>?</span></h6>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mt-3">
+                                <div class="col-12">
+                                    <div class="old_zip my_label input_group datasik_suggestion">
+                                        <label>Old Zip Code:</label>
+                                        <input type="text" class="form-control" required autocomplete="nope">
+                                        <ul id="old_zip_code_ul"
+                                            class="old_zip_code_ul suggestion datasik_suggestion_list d-none">
+                                            <li>97402 <span class="secondary-text">EUGENE</span></li>
+                                            <li>97402 <span class="secondary-text">EUGENE</span></li>
+                                            <li>97402 <span class="secondary-text">EUGENE</span></li>
+                                            <li>97402 <span class="secondary-text">EUGENE</span></li>
+                                            <li>97402 <span class="secondary-text">EUGENE</span></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="col-12 mt-2">
+                                    <div class="old_city my_label input_group">
+                                        <label>Old City:</label>
+                                        <input type="text" class="form-control" required autocomplete="nope">
+                                    </div>
+                                </div>
+                                <div class="col-12 mt-2">
+                                    <div class="old_state my_label select_group">
+                                        <label>Old State:</label>
+                                        <select class="form-control">
+                                            <option value="Select_State" selected>Select State</option>
+                                            Alabama (AL)
+                                            </option>
+                                            <option value="AK">
+                                                Alaska (AK)
+                                            </option>
+                                            <option value="AZ">
+                                                Arizona (AZ)
+                                            </option>
+                                            <option value="AR">
+                                                Arkansas(AR)
+                                            </option>
+                                            <option value="CA">
+                                                California (CA)
+                                            </option>
+                                            <option value="CO">
+                                                Colorado (CO)
+                                            </option>
+                                            <option value="CT">
+                                                Connecticut (CT)
+                                            </option>
+                                            <option value="DE">
+                                                Delaware (DE)
+                                            </option>
+                                            <option value="DC">
+                                                District of Columbia (DC)
+                                            </option>
+                                            <option value="FL">
+                                                Florida (FL)
+                                            </option>
+                                            <option value="GA">
+                                                Georgia (GA)
+                                            </option>
+                                            <option value="HI">
+                                                Hawaii (HI)
+                                            </option>
+                                            <option value="ID">
+                                                Idaho (ID)
+                                            </option>
+                                            <option value="IL">
+                                                Illinois (IL)
+                                            </option>
+                                            <option value="IN">
+                                                Indiana (IN)
+                                            </option>
+                                            <option value="IA">
+                                                Iowa (IA)
+                                            </option>
+                                            <option value="KS">
+                                                Kansas (KS)
+                                            </option>
+                                            <option value="KY">
+                                                Kentucky (KY)
+                                            </option>
+                                            <option value="LA">
+                                                Louisiana (LA)
+                                            </option>
+                                            <option value="ME">
+                                                Maine (ME)
+                                            </option>
+                                            <option value="MH">
+                                                Marshall Islands (MH)
+                                            </option>
+                                            <option value="MD">
+                                                Maryland (MD)
+                                            </option>
+                                            <option value="MA">
+                                                Massachusetts (MA)
+                                            </option>
+                                            <option value="MI">
+                                                Michigan (MI)
+                                            </option>
+                                            <option value="MN">
+                                                Minnesota (MN)
+                                            </option>
+                                            <option value="MS">
+                                                Mississippi (MS)
+                                            </option>
+                                            <option value="MO">
+                                                Missouri (MO)
+                                            </option>
+                                            <option value="MT">
+                                                Montana (MT)
+                                            </option>
+                                            <option value="NE">
+                                                Nebraska (NE)
+                                            </option>
+                                            <option value="NV">
+                                                Nevada (NV)
+                                            </option>
+                                            <option value="NH">
+                                                New Hampshire (NH)
+                                            </option>
+                                            <option value="NJ">
+                                                New Jersey (NJ)
+                                            </option>
+                                            <option value="NM">
+                                                New Mexico (NM)
+                                            </option>
+                                            <option value="NY">
+                                                New York (NY)
+                                            </option>
+                                            <option value="NC">
+                                                North Carolina (NC)
+                                            </option>
+                                            <option value="ND">
+                                                North Dakota (ND)
+                                            </option>
+                                            <option value="OH">
+                                                Ohio (OH)
+                                            </option>
+                                            <option value="OK">
+                                                Oklahoma (OK)
+                                            </option>
+                                            <option value="OR">
+                                                Oregon (OR)
+                                            </option>
+                                            <option value="PW">
+                                                Palau (PW)
+                                            </option>
+                                            <option value="PA">
+                                                Pennsylvania (PA)
+                                            </option>
+                                            <option value="PR">
+                                                Puerto Rico (PR)
+                                            </option>
+                                            <option value="RI">
+                                                Rhode Island (RI)
+                                            </option>
+                                            <option value="SC">
+                                                South Carolina (SC)
+                                            </option>
+                                            <option value="SD">
+                                                South Dakota (SD)
+                                            </option>
+                                            <option value="TN">
+                                                Tennessee (TN)
+                                            </option>
+                                            <option value="TX">
+                                                Texas (TX)
+                                            </option>
+                                            <option value="UT">
+                                                Utah (UT)
+                                            </option>
+                                            <option value="VT">
+                                                Vermont (VT)
+                                            </option>
+                                            <option value="VI">
+                                                Virgin Islands (VI)
+                                            </option>
+                                            <option value="VA">
+                                                Virginia (VA)
+                                            </option>
+                                            <option value="WA">
+                                                Washington (WA)
+                                            </option>
+                                            <option value="WV">
+                                                West Virginia (VA)
+                                            </option>
+                                            <option value="WI">
+                                                Wisconsin (WI)
+                                            </option>
+                                            <option value="WY">
+                                                Wyoming (WY)
+                                            </option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-12 mt-2">
+                                    <div class="old_state my_label input_group datasik_suggestion">
+                                        <label>Street Address:</label>
+                                        <input type="text" class="form-control" required autocomplete="nope">
+                                        <ul id="old_street_address_ul"
+                                            class="className street datasik_suggestion_list d-none">
+                                            <li>97402 <span class="secondary-text">EUGENE</span></li>
+                                            <li>97402 <span class="secondary-text">EUGENE</span></li>
+                                            <li>97402 <span class="secondary-text">EUGENE</span></li>
+                                            <li>97402 <span class="secondary-text">EUGENE</span></li>
+                                            <li>97402 <span class="secondary-text">EUGENE</span></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- New  -->
+                            <div class="all_step_heading p-2 mt-3">
+                                <div class="row">
+                                    <div class="col-8">
+                                        <h5>New Address</h5>
+                                    </div>
+                                    <div class="col-4 text-right">
+                                        <div class="help_text">
+                                            <h6>Help <span>?</span></h6>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mt-4">
+                                <div class="col-12">
+                                    <div class="new_zip my_label input_group datasik_suggestion">
+                                        <label>New Zip Code:</label>
+                                        <input type="text" class="form-control" required autocomplete="nope">
+                                        <ul id="new_zip_code_ul"
+                                            class="new_zip_code_ul suggestion datasik_suggestion_list d-none">
+                                            <li>97402 <span class="secondary-text">EUGENE</span></li>
+                                            <li>97402 <span class="secondary-text">EUGENE</span></li>
+                                            <li>97402 <span class="secondary-text">EUGENE</span></li>
+                                            <li>97402 <span class="secondary-text">EUGENE</span></li>
+                                            <li>97402 <span class="secondary-text">EUGENE</span></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="col-12 mt-2">
+                                    <div class="new_city my_label input_group">
+                                        <label>New City:</label>
+                                        <input type="text" class="form-control" required autocomplete="nope">
+                                    </div>
+                                </div>
+                                <div class="col-12 mt-2">
+                                    <div class="new_state my_label select_group">
+                                        <label>New State:</label>
+                                        <select class="form-control">
+                                            <option value="Select_State" selected>Select State</option>
+                                            Alabama (AL)
+                                            </option>
+                                            <option value="AK">
+                                                Alaska (AK)
+                                            </option>
+                                            <option value="AZ">
+                                                Arizona (AZ)
+                                            </option>
+                                            <option value="AR">
+                                                Arkansas(AR)
+                                            </option>
+                                            <option value="CA">
+                                                California (CA)
+                                            </option>
+                                            <option value="CO">
+                                                Colorado (CO)
+                                            </option>
+                                            <option value="CT">
+                                                Connecticut (CT)
+                                            </option>
+                                            <option value="DE">
+                                                Delaware (DE)
+                                            </option>
+                                            <option value="DC">
+                                                District of Columbia (DC)
+                                            </option>
+                                            <option value="FL">
+                                                Florida (FL)
+                                            </option>
+                                            <option value="GA">
+                                                Georgia (GA)
+                                            </option>
+                                            <option value="HI">
+                                                Hawaii (HI)
+                                            </option>
+                                            <option value="ID">
+                                                Idaho (ID)
+                                            </option>
+                                            <option value="IL">
+                                                Illinois (IL)
+                                            </option>
+                                            <option value="IN">
+                                                Indiana (IN)
+                                            </option>
+                                            <option value="IA">
+                                                Iowa (IA)
+                                            </option>
+                                            <option value="KS">
+                                                Kansas (KS)
+                                            </option>
+                                            <option value="KY">
+                                                Kentucky (KY)
+                                            </option>
+                                            <option value="LA">
+                                                Louisiana (LA)
+                                            </option>
+                                            <option value="ME">
+                                                Maine (ME)
+                                            </option>
+                                            <option value="MH">
+                                                Marshall Islands (MH)
+                                            </option>
+                                            <option value="MD">
+                                                Maryland (MD)
+                                            </option>
+                                            <option value="MA">
+                                                Massachusetts (MA)
+                                            </option>
+                                            <option value="MI">
+                                                Michigan (MI)
+                                            </option>
+                                            <option value="MN">
+                                                Minnesota (MN)
+                                            </option>
+                                            <option value="MS">
+                                                Mississippi (MS)
+                                            </option>
+                                            <option value="MO">
+                                                Missouri (MO)
+                                            </option>
+                                            <option value="MT">
+                                                Montana (MT)
+                                            </option>
+                                            <option value="NE">
+                                                Nebraska (NE)
+                                            </option>
+                                            <option value="NV">
+                                                Nevada (NV)
+                                            </option>
+                                            <option value="NH">
+                                                New Hampshire (NH)
+                                            </option>
+                                            <option value="NJ">
+                                                New Jersey (NJ)
+                                            </option>
+                                            <option value="NM">
+                                                New Mexico (NM)
+                                            </option>
+                                            <option value="NY">
+                                                New York (NY)
+                                            </option>
+                                            <option value="NC">
+                                                North Carolina (NC)
+                                            </option>
+                                            <option value="ND">
+                                                North Dakota (ND)
+                                            </option>
+                                            <option value="OH">
+                                                Ohio (OH)
+                                            </option>
+                                            <option value="OK">
+                                                Oklahoma (OK)
+                                            </option>
+                                            <option value="OR">
+                                                Oregon (OR)
+                                            </option>
+                                            <option value="PW">
+                                                Palau (PW)
+                                            </option>
+                                            <option value="PA">
+                                                Pennsylvania (PA)
+                                            </option>
+                                            <option value="PR">
+                                                Puerto Rico (PR)
+                                            </option>
+                                            <option value="RI">
+                                                Rhode Island (RI)
+                                            </option>
+                                            <option value="SC">
+                                                South Carolina (SC)
+                                            </option>
+                                            <option value="SD">
+                                                South Dakota (SD)
+                                            </option>
+                                            <option value="TN">
+                                                Tennessee (TN)
+                                            </option>
+                                            <option value="TX">
+                                                Texas (TX)
+                                            </option>
+                                            <option value="UT">
+                                                Utah (UT)
+                                            </option>
+                                            <option value="VT">
+                                                Vermont (VT)
+                                            </option>
+                                            <option value="VI">
+                                                Virgin Islands (VI)
+                                            </option>
+                                            <option value="VA">
+                                                Virginia (VA)
+                                            </option>
+                                            <option value="WA">
+                                                Washington (WA)
+                                            </option>
+                                            <option value="WV">
+                                                West Virginia (VA)
+                                            </option>
+                                            <option value="WI">
+                                                Wisconsin (WI)
+                                            </option>
+                                            <option value="WY">
+                                                Wyoming (WY)
+                                            </option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-12 mt-2">
+                                    <div class="new_state my_label input_group datasik_suggestion">
+                                        <label>Street Address:</label>
+                                        <input type="text" class="form-control" required autocomplete="nope">
+                                        <ul id="new_street_address_ul"
+                                            class="className street datasik_suggestion_list d-none">
+                                            <li>97402 <span class="secondary-text">EUGENE</span></li>
+                                            <li>97402 <span class="secondary-text">EUGENE</span></li>
+                                            <li>97402 <span class="secondary-text">EUGENE</span></li>
+                                            <li>97402 <span class="secondary-text">EUGENE</span></li>
+                                            <li>97402 <span class="secondary-text">EUGENE</span></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="col-12 mt-2">
+                                    <div class="phone_type my_label select_group">
+                                        <label>Phone Type:</label>
+                                        <select type="text" class="form-control">
+                                            <option value="MobilePhone" selected>Mobile Phone</option>
+                                            <option value="HomePhone">Home Phone</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-12 mt-2">
+                                    <div class="new_state my_label input_group">
+                                        <label>Phone:</label>
+                                        <input type="text" class="form-control" placeholder="xxx xxx xxxx" required
+                                            autocomplete="nope">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mt-4 px-2">
+                                <div class="col-12">
+                                    <div class="house_status">
+                                        <div class="row no-gutters">
+                                            <div class="col-5">
+                                                House Status:
+                                            </div>
+                                            <div class="col-3">
+                                                <input type="radio" id="radioButton-own" name="status_type" value="Own"
+                                                    checked="">
+                                                <label for="radioButton-own">
+                                                    <span class="iconRadio"></span> Own
+                                                </label>
+                                            </div>
+                                            <div class="col-3">
+                                                <input type="radio" id="radioButton-rent" name="status_type"
+                                                    value="Rent">
+                                                <label for="radioButton-rent">
+                                                    <span class="iconRadio"></span> Rent
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- middle Form End -->
+
+
+                    <!-- Right Form -->
+                    <div class="col-lg-4">
+                        <div class="form_3 top_border_none mb-3">
+                            <div class="form_step_heading text-center py-1">
+                                <h4>Step 3 - Select Move Type</h4>
+                            </div>
+
+                            <div class="row mt-3">
+                                <div class="col-12">
+                                    <div class="move_type px-2 py-2">
+                                        <div class="row">
+                                            <div class="col-8">
+                                                <input class="individual_type" type="radio" id="individual-radiobtn"
+                                                    name="rent-type" value="Individual" checked="">
+                                                <label for="individual-radiobtn">
+                                                    <span class="iconRadio"></span>Individual
+                                                </label>
+                                            </div>
+                                            <div class="col-4 text-right">
+                                                <div class="help_text help_ind">
+                                                    <h6>Help <span>?</span></h6>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="move_type_text my-2 px-2">
+                                        <p>Select Individual if you are the only one moving</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row mt-3">
+                                <div class="col-12">
+                                    <div class="move_type px-2 py-2">
+                                        <div class="row">
+                                            <div class="col-8">
+                                                <input class="family_type" type="radio" id="family-radiobtn"
+                                                    name="rent-type" value="Family">
+                                                <label for="family-radiobtn">
+                                                    <span class="iconRadio"></span>Family
+                                                </label>
+                                            </div>
+                                            <div class="col-4 text-right">
+                                                <div class="help_text help_fml">
+                                                    <h6>Help <span>?</span></h6>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="move_type_text my-2 px-2">
+                                        <p>Select Family if everyone in your household has the same last name and
+                                            everyone is moving to the same new address.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row mt-2">
+                                <div class="col-12">
+                                    <div class="move_type px-2 py-2">
+                                        <div class="row">
+                                            <div class="col-8">
+                                                <input class="business_type" type="radio" id="business-radiobtn"
+                                                    name="rent-type" value="Business">
+                                                <label for="business-radiobtn">
+                                                    <span class="iconRadio"></span>Business
+                                                </label>
+                                            </div>
+                                            <div class="col-4 text-right">
+                                                <div class="help_text">
+                                                    <a href="#popup-business">
+                                                        <h6>Help <span>?</span></h6>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="move_type_text my-2 px-2">
+                                        <p>Select Business if a business is moving.</p>
+                                    </div>
+                                </div>
+                                <div class="col-12 my-4 business_col d-none">
+                                    <div class="business_name my_label_business_name input_group">
+                                        <label>Business Name:</label>
+                                        <input type="text" class="form-control" required autocomplete="nope">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row my-3 mx-1">
+                                <div class="col-12">
+                                    <div class="hr_tag">
+                                        <hr>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mb-4">
+                                <div class="col-12 mx-2">
+                                    <div class="agree_btn">
+                                        <input type="checkbox" id="agree" name="agree">
+                                        <label for="agree"> I agree to the <a href="">Terms & Conditions.</a>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="main_form_btn mx-2">
+                                        <button class="btn btn-block btn_lg">Continue</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </form>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="about_item">
+                    <img src="img/A6lDlZ7.png" alt="About" class="img-fluid">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <footer class="mt-2  py-4">
+            <div class="row">
+                <div class="col-12">
+                    <div class="footer_text text-center">
+                        <p class="my-2">Copyright &copy; 2020 Change It For Your Services, LLC. All Right Reserved.</p>
+                        <p>60 E Rio Salado Parkway, Suite 900, Tempe, Arizona, 85281 :: 1-888-481-9592</p>
+                    </div>
+                    <div class="footer_link text-center mt-3">
+                        <li>
+                            <a href="">Services</a> |
+                        </li>
+                        <li>
+                            <a href=""> Terms & Conditions</a> |
+                        </li>
+                        <li>
+                            <a href=""> Privacy Policy</a> |
+                        </li>
+                        <li>
+                            <a href="">Contact Us</a>
+                        </li>
+                    </div>
+                </div>
+            </div>
+            <div class="footer_img text-center my-3">
+                <img src="img/chdDKEr.png" alt="" class="img-fluid">
+                <img src="img/FbTQnUe.png" alt="" class="img-fluid">
+                <img src="img/ilu5JwO.png" alt="" class="img-fluid">
+            </div>
+        </footer>
+    </div>
+
+
+
+
+
+
+
+
+    <!-- Js Link -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap_js/bootstrap.min.js"></script>
+    <script src="js/flatpickr.js"></script>
+    <script src="js/custom.js"></script>
+
+</body>
+
+</html>

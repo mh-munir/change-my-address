@@ -1,0 +1,397 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #EFEFEF;
+    font-family: 'Roboto', sans-serif;
+}
+
+.main_header {
+    background-color: #FFFFFF;
+}
+
+.contact_number {
+    text-align: right;
+}
+
+.contact_number h6 {
+    color: #0064BB;
+    font-size: 1rem;
+    font-weight: 400;
+    margin: 0;
+}
+
+.contact_number h6 a {
+    text-decoration: none;
+}
+
+.form_body {
+    background-color: #FFFFFF;
+}
+
+.form_body_header {
+    background-color: #005EBD;
+}
+
+.form_body_header_text h4 {
+    color: #FFFFFF;
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    font-weight: 400;
+    margin: 0;
+}
+
+.lock_img {
+    display: inline-block;
+}
+
+.lock_text {
+    display: inline-block;
+}
+
+.lock_text h6 {
+    color: #FFFFFF;
+    font-size: .9rem;
+    font-weight: 400;
+    margin: 0;
+}
+
+.form_1,
+.form_2,
+.form_3 {
+    border: 3px solid #B7E4FB;
+    height: 650px;
+}
+
+.form_step_heading {
+    background-color: #0064BD;
+}
+
+.form_step_heading h4 {
+    color: #FFFFFF;
+    font-size: 1.2rem;
+    margin: 0;
+    font-weight: 400;
+}
+
+.move_type {
+    background-color: #B7E4FB;
+}
+
+label {
+    margin: 0;
+    color: #000;
+    font-size: 1rem;
+    padding: 0;
+}
+
+p {
+    font-size: 12px;
+    margin: 0;
+}
+
+a {
+    text-decoration: none !important;
+}
+
+.help_text {
+    padding-top: 4px;
+    cursor: pointer;
+}
+
+.help_text h6 {
+    margin: 0;
+    font-size: 14px;
+    color: #005EBD;
+}
+
+.help_text h6 span {
+    position: relative;
+    z-index: 1;
+    margin: 5px;
+    color: #FFFFFF;
+}
+
+.help_text h6 span::before {
+    content: "";
+    position: absolute;
+    background-color: orange;
+    width: 15px;
+    height: 15px;
+    z-index: -1;
+    left: -5px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+
+.no-gutters {
+    margin-right: 2px;
+    margin-left: 3px;
+    padding: 0 5px;
+}
+
+.my_label label,
+.my_label label {
+    font-size: 14px;
+    display: inline-block;
+}
+
+
+.start_forwarding_date>input.form-control,
+.stop_forwarding_date>input.form-control {
+    width: 150px;
+    display: inline-block;
+}
+
+.start_forwarding_date img,
+.stop_forwarding_date img {
+    cursor: pointer;
+}
+
+.form-control {
+    border: 1px solid #CCC;
+    height: 30px;
+    border-radius: 2px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    -ms-border-radius: 2px;
+    -o-border-radius: 2px;
+}
+
+.form-control:focus {
+    border-color: rgba(103, 175, 233, 0.5);
+    outline: 0;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(0, 100, 189, 0.2);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(0, 100, 189, 0.2);
+}
+
+.all_step_heading {
+    background-color: #B7E4FB;
+}
+
+.all_step_heading h5 {
+    margin: 0;
+    color: #000;
+    font-size: 1rem;
+    font-weight: 400;
+    padding: 3px 0;
+}
+
+.select_group>select {
+    display: inline-block;
+    width: 200px;
+    font-size: 14px;
+}
+
+.title>select {
+    width: 100px !important;
+}
+
+.input_group>input {
+    width: 200px;
+    display: inline-block;
+}
+
+.status_p {
+    font-size: 16px;
+}
+
+.own-p {
+    font-size: 16px;
+}
+
+.rent_p {
+    font-size: 16px;
+}
+
+.input_group>label,
+.select_group>label {
+    width: 100px;
+    text-align: right;
+}
+
+.my_label_business_name label {
+    width: 110px;
+    font-size: 14px;
+}
+
+.btn_lg {
+    background-color: #0064BB;
+    color: #FFFFFF;
+}
+
+.btn_lg:hover {
+    background-color: orange;
+    color: #000;
+}
+
+.top_border_none {
+    border-top: none;
+}
+
+.about_item {
+    background-color: #FFFFFF;
+    padding: 20px;
+}
+
+.footer_text p {
+    font-size: 15px;
+}
+
+footer {
+    background-color: #FFFFFF;
+}
+
+.footer_link li {
+    list-style: none;
+    display: inline-block;
+    color: #005EBD !important;
+    font-size: 14px;
+}
+
+/* ------------------ Ipad Pro ------------------ */
+@media screen and (max-width: 1024px) {
+
+    .form_1,
+    .form_2,
+    .form_3 {
+        height: 700px;
+    }
+
+    .start_forwarding_date>input.form-control,
+    .stop_forwarding_date>input.form-control {
+        width: 125px;
+        font-size: 14px;
+    }
+
+    .my_label label,
+    .my_label label {
+        font-size: 12px;
+    }
+
+    .input_group>label,
+    .select_group>label {
+        width: 90px;
+    }
+
+    .my_label_business_name label {
+        width: 100px;
+        font-size: 12px;
+    }
+
+    .input_group>input {
+        width: 160px;
+    }
+
+    .select_group>select {
+        display: inline-block;
+        width: 160px;
+        font-size: 12px;
+    }
+
+}
+
+@media screen and (max-width: 767px) {
+    .form_body_header_text h4 {
+        font-size: 10px;
+        padding-top: 8px;
+    }
+
+    .lock_text h6 {
+        font-size: 8px;
+        font-weight: 400;
+    }
+
+    .start_forwarding_date>input.form-control,
+    .stop_forwarding_date>input.form-control {
+        width: 180px;
+    }
+
+    .input_group>input,
+    .select_group>select {
+        width: 180px;
+
+    }
+}
+
+
+.popup_permanent,
+.popup_temporary,
+.popup_personal,
+.popup_individual,
+.popup_family,
+.popup_business {
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.4);
+    width: 100%;
+    height: 100vh;
+    z-index: 999;
+    transition: all .5s linear;
+    -webkit-transition: all .5s linear;
+    -moz-transition: all .5s linear;
+    -ms-transition: all .5s linear;
+    -o-transition: all .5s linear;
+}
+
+.guide {
+    position: absolute;
+    background-color: #FFFFFF;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    padding: 20px;
+    width: 40%;
+}
+
+.guide_btn {
+    position: relative;
+}
+
+.p_guide_btn,
+.t_guide_btn,
+.psnl_guide_btn,
+.ind_guide_btn,
+.fml_guide_btn,
+.bus_guide_btn {
+    background-color: transparent;
+    font-size: 25px;
+    padding: 5px 10px;
+    position: absolute;
+    right: -20px;
+    top: -29px;
+}
+
+.p_guide_btn:focus,
+.t_guide_btn:focus,
+.psnl_guide_btn:focus,
+.ind_guide_btn:focus,
+.fml_guide_btn:focus,
+.bus_guide_btn:focus {
+    outline: 0;
+    box-shadow: none;
+}
+
+.user_guide_heading h5 {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.guide_text,
+.guide_text,
+.guide_text_02 {
+    font-size: 13px;
+}
+
+@media screen and (max-width: 768px) {
+    .guide {
+        width: 100%;
+    }
+
+}
